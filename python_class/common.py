@@ -2,18 +2,18 @@ import time
 from selenium.webdriver.common.by import By
 
 
-def open_url(driver, url):
+def open_url(driver, url):  # 打开网页
     driver.get(url)
     driver.maximize_window()
 
 
-def login(driver, username, password):
+def login(driver, username, password):  # 登录
     driver.find_element(By.ID, "username").send_keys(username)
     driver.find_element(By.ID, "password").send_keys(password)
     driver.find_element(By.ID, "btnSubmit").click()
 
 
-def search(driver, url, username, password, s_key):
+def search(driver, url, username, password, s_key):  # 搜索
     open_url(driver, url)
     login(driver, username, password)
     time.sleep(2)
